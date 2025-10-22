@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TradePeg — UOM Enforcer (SO+PO) — Hybrid Row-Scoped (Modal + Main)
 // @namespace    farla.tradepeg.uomguard.merged
-// @version      6.1.1
+// @version      6.1.3
 // @author       you
 // @description  Learn allowed UOMs from item-price API (passive hook). For existing lines with no recent traffic, actively fetch using captured Bearer + doc context. Applies to modal and main grid, row-scoped. Includes de-dupe + quiet debug toggle.
 // @match        https://farla2.tradepeg.net/app/en-gb/doc/so/*
