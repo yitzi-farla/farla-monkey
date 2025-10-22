@@ -1,14 +1,20 @@
 // ==UserScript==
-// @name         TradePeg SO Validator
-// @namespace    farla.tradepeg.validator
-// @version      1.0.0
-// @description  Enforce Sales Order rules on the SO create page only; robust carrier check
-// @author       Farla
-// @match        https://farla2.tradepeg.net/app/en-gb/doc/so/0
-// @match        https://farla2.tradepeg.net/app/en-gb/doc/so/0?*
-// @run-at       document-idle
-// @grant        none
+// @name         TradePeg — UOM Enforcer (SO+PO) — Hybrid Row-Scoped (Modal + Main)
+// @namespace    farla.tradepeg.uomguard.merged
+// @version      6.1.1
+// @author       you
+// @description  Learn allowed UOMs from item-price API (passive hook). For existing lines with no recent traffic, actively fetch using captured Bearer + doc context. Applies to modal and main grid, row-scoped. Includes de-dupe + quiet debug toggle.
+// @match        https://farla2.tradepeg.net/app/en-gb/doc/so/*
+// @match        https://farla2.tradepeg.net/app/en-gb/doc/po/*
+// @exclude      https://farla2.tradepeg.net/app/en-gb/doc/so/0*
+// @exclude      https://farla2.tradepeg.net/app/en-gb/doc/po/0*
+// @run-at       document-start
+// @grant        unsafeWindow
+// @updateURL   https://raw.githubusercontent.com/yitzi-farla/farla-monkey/main/farla-monkey-1.user.js
+// @downloadURL https://raw.githubusercontent.com/yitzi-farla/farla-monkey/main/farla-monkey-1.user.js
+// @homepageURL https://github.com/yitzi-farla/farla-monkey
 // ==/UserScript==
+
 
 (function () {
   "use strict";
